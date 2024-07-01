@@ -1,13 +1,18 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashSet;
 
 public class User {
+    private static HashSet<String> userNames = new HashSet<>();
     String name;
     TaskList taskList;
 
-    public User(String name) {
-        this.name = name;
-        this.taskList = new TaskList();
+    public User(String name) throws IllegalArgumentException {
+        if (userNames.contains(name)) {
+            throw new IllegalArgumentException("Error - Username already exists.");
+        } else {
+            this.name = name;
+            this.taskList = new TaskList();
+            userNames.add(name);
+        }
     }
 
     public void insertTask(String taskDescription, boolean status, int location) {
