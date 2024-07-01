@@ -5,13 +5,11 @@ public class Main {
 
                 ArrayList<User> users = new ArrayList<>();
 
-                // Creating users and adding them to the ArrayList
                 User user1 = new User("Amy");
                 User user2 = new User("Billy");
                 users.add(user1);
                 users.add(user2);
 
-                // Adding tasks to users
                 user1.insertTask("Finish Sprint", false, 0);
                 user1.insertTask("Complete AWS labs", false, 0);
 
